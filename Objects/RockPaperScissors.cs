@@ -12,9 +12,12 @@ namespace RockPaperScissorsApp.Objects
     private static int _player2wins = 0;
     private static int _player1losses = 0;
     private static int _player2losses = 0;
-
+    private static int _rockProbability = 0;
+    private static int _paperProbability = 0;
+    private static int _scissorsProbability = 0;
     private static List<int> _moves = new List<int>();
-    private static List<int> _plays = new List<int>(){1, 2, 3};
+    private static List<int> _plays = new List<int>(){1, 1, 1, 2, 2, 2, 3, 3, 3};
+    private static Dictionary<int, int> _playCounts = new Dictionary<int, int>() {{1, 3}, {2, 3}, {3, 3}};
     private static bool _computer = false;
 
     public Game(int player1, int player2)
@@ -25,16 +28,12 @@ namespace RockPaperScissorsApp.Objects
         _player1 = player1;
         Random probabilityRoll = new Random();
         int testRollForProb = probabilityRoll.Next(0,11);
-        if(testRollForProb > 5)
+        if(testRollForProb > 2)
         {
           //pick from highest win rate
           Random roll = new Random();
           int indexOfPlays = roll.Next(0, _plays.Count);
           _player2 = _plays[indexOfPlays];
-          Console.WriteLine("You've made it and the roll is: " + _player2);
-          for(int index = 0; index < _plays.Count; index++) {
-            Console.WriteLine(_plays[index]);
-          }
         }
         else
         {
@@ -67,6 +66,7 @@ namespace RockPaperScissorsApp.Objects
         if(_computer == true)
         {
           _plays.Add(2);
+          _playCounts[2]++;
         }
       }
       else if(_player2 == 1 && _player1 == 3)
@@ -77,6 +77,7 @@ namespace RockPaperScissorsApp.Objects
         if(_computer == true)
         {
           _plays.Add(_player2);
+          _playCounts[_player2]++;
         }
       }
       else
@@ -89,6 +90,7 @@ namespace RockPaperScissorsApp.Objects
           if(_computer == true)
           {
             _plays.Add(_player2);
+            _playCounts[_player2]++;
           }
         }
         else
@@ -99,9 +101,33 @@ namespace RockPaperScissorsApp.Objects
           if(_computer == true)
           {
             _plays.Add(_player1);
+            _playCounts[_player1]++;
           }
         }
       }
+      // SetProbability();
+    }
+
+    public static void SetProbability()
+    {
+      _rockProbability = (_playCounts[1] * 100) / (_plays.Count);
+      _paperProbability = (_playCounts[2] * 100) / (_plays.Count);
+      _scissorsProbability = (_playCounts[3] * 100) / (_plays.Count);
+    }
+
+    public static string GetRockProbability()
+    {
+      return _rockProbability.ToString();
+    }
+
+    public static string GetPaperProbability()
+    {
+      return _paperProbability.ToString();
+    }
+
+    public static string GetScissorsProbability()
+    {
+      return _scissorsProbability.ToString();
     }
 
     public static List<int> GetMoves()
