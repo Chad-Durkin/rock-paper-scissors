@@ -1,27 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
+@{
+  Layout="Shared/_Layout.cshtml";
+}
 
     <form action="/play" method="post">
-      <label for="player1">Player 1</label>
-      <select name="player1">
-        <option value="1">Rock</option>
-        <option value="2">Paper</option>
-        <option value="3">Scissors</option>
-      </select>
-      <label for="player2">Player 2</label>
-      <select name="player2">
-        <option value="4">computer</option>
-        <option value="1">Rock</option>
-        <option value="2">Paper</option>
-        <option value="3">Scissors</option>
-      </select>
-      <button type="submit" name="button">Play!</button>
+      <div class="player1div">
+        <label for="player1">Player 1</label>
+        <select name="player1">
+          <option value="1">Rock</option>
+          <option value="2">Paper</option>
+          <option value="3">Scissors</option>
+        </select>
+        <button type="button" name="button" id="next-player">Go to Player 2</button>
+      </div>
+      <div class="player2div">
+        <label for="player2">Player 2</label>
+        <select name="player2">
+          <option value="4">computer</option>
+          <option value="1">Rock</option>
+          <option value="2">Paper</option>
+          <option value="3">Scissors</option>
+        </select>
+        <button type="submit" name="button">Play!</button>
+      </div>
     </form>
-
-  </body>
-</html>

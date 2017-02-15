@@ -9,18 +9,38 @@ namespace RockPaperScissorsApp.Objects
     private int _player2;
     private string _results;
     private static List<int> _moves = new List<int>();
+    private static List<int> _plays = new List<int>(){1, 2, 3};
+    private static bool _computer = false;
 
     public Game(int player1, int player2)
     {
       if(player2 == 4)
       {
+        _computer = true;
         _player1 = player1;
-        Random roll = new Random();
-        _player2 = roll.Next(1, 4);
-        _moves.Add(_player1);
-        _moves.Add(_player2);
+        Random probabilityRoll = new Random();
+        int testRollForProb = probabilityRoll.Next(0,11);
+        if(testRollForProb > 5)
+        {
+          //pick from highest win rate
+          Random roll = new Random();
+          int indexOfPlays = roll.Next(0, _plays.Count);
+          _player2 = _plays[indexOfPlays];
+          Console.WriteLine("You've made it and the roll is: " + _player2);
+          for(int index = 0; index < _plays.Count; index++) {
+            Console.WriteLine(_plays[index]);
+          }
+        }
+        else
+        {
+          Random roll = new Random();
+          _player2 = roll.Next(1, 4);
+          _moves.Add(_player1);
+          _moves.Add(_player2);
+        }
       }
       else {
+        _computer = false;
         _player1 = player1;
         _player2 = player2;
         _moves.Add(_player1);
@@ -37,20 +57,36 @@ namespace RockPaperScissorsApp.Objects
       else if(_player1 == 1 && _player2 == 3)
       {
         _results = "player 1 wins";
+        if(_computer == true)
+        {
+          _plays.Add(2);
+        }
       }
       else if(_player2 == 1 && _player1 == 3)
       {
         _results = "player 2 wins";
+        if(_computer == true)
+        {
+          _plays.Add(_player2);
+        }
       }
       else
       {
         if(_player1 < _player2)
         {
           _results = "player 2 wins";
+          if(_computer == true)
+          {
+            _plays.Add(_player2);
+          }
         }
         else
         {
           _results = "player 1 wins";
+          if(_computer == true)
+          {
+            _plays.Add(_player1);
+          }
         }
       }
     }
