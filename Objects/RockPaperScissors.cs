@@ -7,7 +7,7 @@ namespace RockPaperScissorsApp.Objects
   {
     private int _player1;
     private int _player2;
-    private string results;
+    private string _results;
     private static List<int> _moves = new List<int>();
 
     public Game(int player1, int player2)
@@ -24,15 +24,40 @@ namespace RockPaperScissorsApp.Objects
       {
         _results = "draw";
       }
-      else if(_player1 == 1 && player2 == 3)
+      else if(_player1 == 1 && _player2 == 3)
       {
-
+        _results = "player 1 wins";
+      }
+      else if(_player2 == 1 && _player1 == 3)
+      {
+        _results = "player 2 wins";
+      }
+      else
+      {
+        if(_player1 < _player2)
+        {
+          _results = "player 2 wins";
+        }
+        else
+        {
+          _results = "player 1 wins";
+        }
       }
     }
 
     public static List<int> GetMoves()
     {
       return _moves;
+    }
+
+    public string GetResult()
+    {
+      return _results;
+    }
+
+    public static void DeleteAll()
+    {
+      _moves.Clear();
     }
 
   }

@@ -5,7 +5,7 @@ using RockPaperScissorsApp.Objects;
 
 namespace GameTest
 {
-  public class GameTest
+  public class GameTest : IDisposable
   {
     [Fact]
     public void IsGame_ShowingPlayerInput_Inputs()
@@ -23,16 +23,23 @@ namespace GameTest
     }
 
     [Fact]
-    public void IsGame_ShowingPlayerInput_Inputs()
+    public void IsGame_WhoWins_String()
     {
       int player1= 1;
-      int player2 = 2;
+      int player2 = 3;
       string output = "player 1 wins";
 
       Game newGame = new Game(player1, player2);
-      List<int> result= Game.GetMoves();
+      newGame.PlayGame();
+      string result = newGame.GetResult();
 
-      Assert.Equal(testList, result);
+
+      Assert.Equal(output, result);
+    }
+
+    public void Dispose()
+    {
+      Game.DeleteAll();
     }
   }
 }
