@@ -12,6 +12,11 @@ namespace RockPaperScissorsApp
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
+      Post["/play"] = _ => {
+        Game newGame = new Game(Request.Form["player1"], Request.Form["player2"]);
+        newGame.PlayGame();
+        return View["results.cshtml", newGame.GetResult()];
+      };
     }
   }
 }

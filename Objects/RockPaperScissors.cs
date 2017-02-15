@@ -12,10 +12,20 @@ namespace RockPaperScissorsApp.Objects
 
     public Game(int player1, int player2)
     {
-      _player1 = player1;
-      _player2 = player2;
-      _moves.Add(_player1);
-      _moves.Add(_player2);
+      if(player2 == 4)
+      {
+        _player1 = player1;
+        Random roll = new Random();
+        _player2 = roll.Next(1, 4);
+        _moves.Add(_player1);
+        _moves.Add(_player2);
+      }
+      else {
+        _player1 = player1;
+        _player2 = player2;
+        _moves.Add(_player1);
+        _moves.Add(_player2);
+      }
     }
 
     public void PlayGame()
