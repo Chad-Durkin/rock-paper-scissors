@@ -23,11 +23,41 @@ namespace GameTest
     }
 
     [Fact]
-    public void IsGame_WhoWins_String()
+    public void IsGame_RockBeatsScissors_String()
     {
       int player1= 1;
       int player2 = 3;
       string output = "player 1 wins";
+
+      Game newGame = new Game(player1, player2);
+      newGame.PlayGame();
+      string result = newGame.GetResult();
+
+
+      Assert.Equal(output, result);
+    }
+
+    [Fact]
+    public void IsGame_PaperBeatsRock_String()
+    {
+      int player1= 2;
+      int player2 = 1;
+      string output = "player 1 wins";
+
+      Game newGame = new Game(player1, player2);
+      newGame.PlayGame();
+      string result = newGame.GetResult();
+
+
+      Assert.Equal(output, result);
+    }
+
+    [Fact]
+    public void IsGame_DrawOccurs_String()
+    {
+      int player1= 2;
+      int player2 = 2;
+      string output = "draw";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();
