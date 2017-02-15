@@ -1,3 +1,63 @@
-.player2div {
-  display:none;
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #282828;
+  color: white;
+}
+
+.jumbotron {
+  background-color: #282828;
+}
+
+.btn{
+  position: relative;
+  margin: auto;
+  left: -32px;
+  top: 45px;
+  height: 100px;
+  width: 260px;
+  font-size: 50px;
+}
+
+.row {
+  height: 100%;
+}
+
+.choices-text {
+  margin-bottom: 30%;
+}
+
+
+input {
+  display: none;
+}
+
+.choice {
+  height: 190px;
+  min-width: 190px;
+  background-color: #282828;
+  text-align: center;
+  border: 2px solid white;
+  margin: 2%;
+}
+
+.choice:hover {
+  box-shadow: 0 0 5px 5px green;
+}
+
+.highlight-box {
+  box-shadow: 0 0 5px 5px green;
+}
+
+
+.choice:nth-child(1) {
+  color: white;
+}
+
+.stats {
+  height: 50vh;
+  padding: 1%;
 }

@@ -14,29 +14,62 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          @RenderBody()
+        <div class="col-sm-8">
+          <div class="row">
+            <form action="/play" method="post">
+              <div class="player1div">
+                <h1>Make Your Move</h1>
+                  <div class="col-sm-4">
+                    <label for="rock">
+                      <div class="choice rock">
+                        <h2 class="choices-text">Rock</h2>
+                        <input type="radio" name="player1" value="1" id="rock" checked>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="paper">
+                      <div class="choice paper">
+                        <h2 class="choices-text">Paper</h2>
+                        <input type="radio" name="player1" value="2" id="paper">
+                      </div>
+                    </label>
+                    <button class="btn" type="submit" name="button">Play!</button>
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="scissors">
+                      <div class="choice scissors">
+                        <h2 class="choices-text">Scissors</h2>
+                        <input type="radio" name="player1" value="3" id="scissors">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 stats">
+              <h2>Player 1</h2>
+              <h3>Wins: @Model["player1 wins"] </h3>
+              <h3>Losses: @Model["player1 losses"] </h3>
+            </div>
+            <div class="col-sm-2 stats">
+              <h2>Computer</h2>
+              <h3>Wins: @Model["player2 wins"] </h3>
+              <h3>Losses: @Model["player2 losses"] </h3>
+              <h3>Rock Chance: @Model["rock chance"]% </h3>
+              <h3>Paper Chance: @Model["paper chance"]% </h3>
+              <h3>Scissors Chance: @Model["scissors chance"]% </h3>
+            </div>
+          </div>
         </div>
-        <div class="col-md-2">
-          <!--Intentionally left blank-->
+        <div class="row">
+          <div class="outputdiv">
+            @RenderBody()
+          </div>
         </div>
-        <div class="col-md-3">
-          <h2>Player 1 Stats</h2>
-          <h3>Wins: @Model["player1 wins"] </h3>
-          <h3>Losses: @Model["player1 losses"] </h3>
-        </div>
-        <div class="col-md-3">
-          <h2>Player 2 Stats</h2>
-          <h3>Wins: @Model["player2 wins"] </h3>
-          <h3>Losses: @Model["player2 losses"] </h3>
-          <h2>Computer Chances of Rolling</h2>
-          <h3>Rock Chance: @Model["rock chance"]% </h3>
-          <h3>Paper Chance: @Model["paper chance"]% </h3>
-          <h3>Scissors Chance: @Model["scissors chance"]% </h3>
-        </div>
-
       </div>
-
     </div>
   </body>
 </html>

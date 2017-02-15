@@ -28,7 +28,7 @@ namespace RockPaperScissorsApp.Objects
         _player1 = player1;
         Random probabilityRoll = new Random();
         int testRollForProb = probabilityRoll.Next(0,11);
-        if(testRollForProb > 2)
+        if(testRollForProb > 5)
         {
           //pick from highest win rate
           Random roll = new Random();
@@ -100,8 +100,8 @@ namespace RockPaperScissorsApp.Objects
           _player2losses++;
           if(_computer == true)
           {
-            _plays.Add(_player1);
-            _playCounts[_player1]++;
+            _plays.Add(3);
+            _playCounts[3]++;
           }
         }
       }
