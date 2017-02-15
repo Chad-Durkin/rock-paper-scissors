@@ -15,7 +15,16 @@ namespace RockPaperScissorsApp
       Post["/play"] = _ => {
         Game newGame = new Game(Request.Form["player1"], Request.Form["player2"]);
         newGame.PlayGame();
-        return View["results.cshtml", newGame.GetResult()];
+        Dictionary<string, string> model = new Dictionary<string, string>{};
+        model.Add("player1", newGame.GetPlayer1());
+        model.Add("player2", newGame.GetPlayer2());
+        model.Add("results", newGame.GetResult());
+        model.Add("player1 wins", Game.GetPlayer1Wins());
+        model.Add("player2 wins", Game.GetPlayer2Wins());
+        model.Add("player1 losses", Game.GetPlayer1Losses());
+        model.Add("player2 losses", Game.GetPlayer2Losses());
+
+        return View["results.cshtml", model];
       };
     }
   }
