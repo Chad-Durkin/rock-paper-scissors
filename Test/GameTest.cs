@@ -25,9 +25,9 @@ namespace GameTest
     [Fact]
     public void IsGame_RockBeatsScissors_String()
     {
-      int player1= 1;
-      int player2 = 3;
-      string output = "player 1 wins";
+      int player1= 3;
+      int player2 = 1;
+      string output = "player 2 wins";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();
@@ -40,9 +40,9 @@ namespace GameTest
     [Fact]
     public void IsGame_PaperBeatsRock_String()
     {
-      int player1= 2;
-      int player2 = 1;
-      string output = "player 1 wins";
+      int player1= 1;
+      int player2 = 2;
+      string output = "player 2 wins";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();
@@ -55,9 +55,9 @@ namespace GameTest
     [Fact]
     public void IsGame_ScissorsBeatsPaper_String()
     {
-      int player1= 3;
-      int player2 = 2;
-      string output = "player 1 wins";
+      int player1= 2;
+      int player2 = 3;
+      string output = "player 2 wins";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();
