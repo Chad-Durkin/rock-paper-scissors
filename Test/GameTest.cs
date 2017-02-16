@@ -27,7 +27,7 @@ namespace GameTest
     {
       int player1= 3;
       int player2 = 1;
-      string output = "player 2 wins";
+      string output = "The computer wins!";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();
@@ -42,7 +42,7 @@ namespace GameTest
     {
       int player1= 1;
       int player2 = 2;
-      string output = "player 2 wins";
+      string output = "The computer wins!";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();
@@ -57,7 +57,7 @@ namespace GameTest
     {
       int player1= 2;
       int player2 = 3;
-      string output = "player 2 wins";
+      string output = "The computer wins!";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();
@@ -72,7 +72,7 @@ namespace GameTest
     {
       int player1= 2;
       int player2 = 2;
-      string output = "draw";
+      string output = "Draw!";
 
       Game newGame = new Game(player1, player2);
       newGame.PlayGame();

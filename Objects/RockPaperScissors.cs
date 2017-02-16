@@ -56,11 +56,11 @@ namespace RockPaperScissorsApp.Objects
     {
       if(_player1 == _player2)
       {
-        _results = "draw";
+        _results = "Draw!";
       }
       else if(_player1 == 1 && _player2 == 3)
       {
-        _results = "player 1 wins";
+        _results = "You win!";
         _player1wins++;
         _player2losses++;
         if(_computer == true)
@@ -71,7 +71,7 @@ namespace RockPaperScissorsApp.Objects
       }
       else if(_player2 == 1 && _player1 == 3)
       {
-        _results = "player 2 wins";
+        _results = "The computer wins!";
         _player2wins++;
         _player1losses++;
         if(_computer == true)
@@ -84,7 +84,7 @@ namespace RockPaperScissorsApp.Objects
       {
         if(_player1 < _player2)
         {
-          _results = "player 2 wins";
+          _results = "The computer wins!";
           _player2wins++;
           _player1losses++;
           if(_computer == true)
@@ -95,7 +95,7 @@ namespace RockPaperScissorsApp.Objects
         }
         else
         {
-          _results = "player 1 wins";
+          _results = "You win!";
           _player1wins++;
           _player2losses++;
           if(_computer == true)

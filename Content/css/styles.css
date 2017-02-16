@@ -6,10 +6,13 @@ html{
 body {
   background-color: #282828;
   color: white;
+  font-family: 'Righteous', cursive;
 }
 
 .jumbotron {
   background-color: #282828;
+  font-family: 'Righteous', cursive;
+  padding-left: 10%;
 }
 
 .btn{
@@ -20,8 +23,12 @@ body {
   height: 100px;
   width: 260px;
   font-size: 50px;
+  background-color: #a3a3a3;
 }
 
+.btn:hover {
+  box-shadow: 0 0 5px 5px #04ed52;
+}
 .row {
   height: 100%;
 }
@@ -45,11 +52,11 @@ input {
 }
 
 .choice:hover {
-  box-shadow: 0 0 5px 5px green;
+  box-shadow: 0 0 5px 5px #04ed52;
 }
 
 .highlight-box {
-  box-shadow: 0 0 5px 5px green;
+  box-shadow: 0 0 5px 5px #04ed52;
 }
 
 
@@ -58,6 +65,70 @@ input {
 }
 
 .stats {
-  height: 50vh;
+  height: 45vh;
   padding: 1%;
+}
+
+.outputdiv {
+  text-align: center;
+  margin-left: -420px;
+  margin-top: 50px;
+}
+
+/*Scissors and Paper*/
+
+.scissors-img {
+  transform: rotate(-70deg);
+  position: relative;
+  right: 400px;
+  top: -100px;
+  float: right;
+}
+
+.paper-img {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  background: repeating-linear-gradient(
+  90deg,
+  #4e72db,
+  #4e72db 1px,
+  #b8bcad 1px,
+  #b8bcad 5px
+);
+  transform: skew(15deg);
+  right: -25px;
+  top: -120px;
+  opacity: 0.9;
+}
+
+.blades {
+  height: 90px;
+  width: 90px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 -1px gray,
+            10px 10px 0 2px black;
+  transform: skew(20deg);
+}
+
+.handle1 {
+  position: relative;
+  top: 15px;
+  left: 108px;
+  height: 40px;
+  width: 20px;
+  border-radius: 90%;
+  box-shadow: 0 0 0 7px black;
+  transform: rotate(-25deg);
+}
+
+.handle2 {
+  height: 40px;
+  width: 20px;
+  position: relative;
+  top: -63px;
+  left: 132px;
+  border-radius: 90%;
+  box-shadow: 0 0 0 7px black;
+  transform: rotate(80deg);
 }

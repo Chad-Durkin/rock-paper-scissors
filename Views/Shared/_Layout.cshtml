@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel="stylesheet" href="../Content/css/styles.css">
     <script src="../Content/js/jquery-3.1.1.js" charset="utf-8"></script>
     <script src="../Content/js/scripts.js" charset="utf-8"></script>
@@ -11,6 +12,12 @@
   <body>
     <div class="jumbotron">
       <h1>Rock Paper Scissors</h1>
+      <div class="scissors-img">
+        <div class="blades"></div>
+        <div class="handle1"></div>
+        <div class="handle2"></div>
+        <div class="paper-img"></div>
+      </div>
     </div>
     <div class="container">
       <div class="row">
@@ -21,7 +28,7 @@
                 <h1>Make Your Move</h1>
                   <div class="col-sm-4">
                     <label for="rock">
-                      <div class="choice rock">
+                      <div class="choice rock highlight-box">
                         <h2 class="choices-text">Rock</h2>
                         <input type="radio" name="player1" value="1" id="rock" checked>
                       </div>
@@ -50,7 +57,7 @@
           </div>
           <div class="row">
             <div class="col-sm-2 stats">
-              <h2>Player 1</h2>
+              <h2>You</h2>
               <h3>Wins: @Model["player1 wins"] </h3>
               <h3>Losses: @Model["player1 losses"] </h3>
             </div>
