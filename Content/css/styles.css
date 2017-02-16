@@ -1,6 +1,7 @@
 html{
   height: 100%;
   width: 100%;
+  word-wrap: break-word;
 }
 
 body {
@@ -75,13 +76,13 @@ input {
   margin-top: 50px;
 }
 
-/*Scissors and Paper*/
+/*Scissors and Paper and Rock*/
 
 .scissors-img {
-  transform: rotate(-70deg);
+  transform: rotate(-90deg);
   position: relative;
-  right: 400px;
-  top: -100px;
+  top: -150px;
+  right: 15%;
   float: right;
 }
 
@@ -131,4 +132,47 @@ input {
   border-radius: 90%;
   box-shadow: 0 0 0 7px black;
   transform: rotate(80deg);
+}
+
+.rock-img {
+  position: relative;
+  top: -460px;
+  left: 200px;
+  transform: rotate(55deg);
+
+}
+.rock-base {
+    position: relative;
+    top: 270px;
+    left: 100px;
+    width: 54px;
+    border-width: 50px 18px 0;
+    border-style: solid;
+    border-color: #af9883 transparent;
+    border-radius: 20px;
+    box-shadow: 1px 0 0 black;
+}
+.rock-edge2 {
+    position: relative;
+    top: 165px;
+    left: 101px;
+    width: 10px;
+    border-width: 40px 18px 0;
+    border-style: solid;
+    border-color: #af9883 transparent;
+    border-radius: 20px;
+    transform: rotate(30deg);
+    box-shadow: -1px 0 0 black;
+}
+.rock-edge1 {
+    position: relative;
+    top: 210px;
+    left: 105px;
+    width: 41px;
+    border-width: 50px 18px 0;
+    border-style: solid;
+    border-color: #af9883 transparent;
+    border-radius: 20px;
+    transform: rotate(-25deg);
+  box-shadow: 1px 0 0 black;
 }
