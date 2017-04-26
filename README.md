@@ -21,7 +21,7 @@ None
 
 ## Support and contact details
 
-If you have any questions or comments please contact one of us via email at ahmeds5@uw.edu, mija.sand@gmail.com, bcooper085@gmail.com, Chaddurkin@gmail.com
+If you have any questions or comments please contact me at Chaddurkin@gmail.com
 
 ## Technologies Used
 
